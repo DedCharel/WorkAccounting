@@ -1,11 +1,8 @@
-package ru.nvgsoft.workaccounting
+package ru.nvgsoft.workaccounting.presentation
 
 import android.app.DatePickerDialog
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import ru.nvgsoft.workaccounting.databinding.ActivityMainBinding
 import java.util.Calendar
 
