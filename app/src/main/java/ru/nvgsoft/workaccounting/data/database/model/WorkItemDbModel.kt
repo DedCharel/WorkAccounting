@@ -25,6 +25,6 @@ data class WorkItemDbModel(
     val id: Int,
     @ColumnInfo(name = "counterparty_id") val counterpartyId: Int,
     @ColumnInfo(name = "work_description") val workDescription: String,
-    @ColumnInfo(name = "worker_id") val workerId: String,
+    @ColumnInfo(name = "worker_id") val workerId: Int,
     @ColumnInfo(name = "spend_time") val spendTime: Int
 )
