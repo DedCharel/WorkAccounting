@@ -6,7 +6,7 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
 @Entity(
-    tableName = "work_item",
+    tableName = "work_items",
     foreignKeys = [
         ForeignKey(
             entity = CounterpartyDbModel::class,

@@ -4,7 +4,9 @@ import android.app.Application
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import ru.nvgsoft.workaccounting.data.database.dao.WorkListDao
+import ru.nvgsoft.workaccounting.data.database.dao.CounterpartyDao
+import ru.nvgsoft.workaccounting.data.database.dao.WorkItemsDao
+import ru.nvgsoft.workaccounting.data.database.dao.WorkerDao
 import ru.nvgsoft.workaccounting.data.database.model.CounterpartyDbModel
 import ru.nvgsoft.workaccounting.data.database.model.WorkItemDbModel
 import ru.nvgsoft.workaccounting.data.database.model.WorkerDbModel
@@ -19,7 +21,9 @@ import ru.nvgsoft.workaccounting.data.database.model.WorkerDbModel
 )
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun workDao(): WorkListDao
+    abstract fun workItemsDao(): WorkItemsDao
+    abstract fun workerDao(): WorkerDao
+    abstract fun CounterpartyDao(): CounterpartyDao
 
     companion object {
         private var INSTANCE: AppDatabase? = null
