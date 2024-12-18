@@ -1,14 +1,16 @@
 package ru.nvgsoft.workaccounting.domain
 
+import androidx.lifecycle.LiveData
+
 interface WorkRepository {
 
-    fun addWorkItem(workItem: WorkItem)
+    suspend fun addWorkItem(workItem: WorkItem)
 
-    fun editWorkItem(workItem: WorkItem)
+    suspend fun editWorkItem(workItem: WorkItem)
 
-    fun deleteWorkItem(workItem: WorkItem)
+    suspend fun deleteWorkItem(workItem: WorkItem)
 
-    fun getWorkItem(id: Int): WorkItem
+    suspend fun getWorkItem(workId: Int): WorkItem
 
-    fun getWorkList(): List<WorkItem>
+    fun getWorkList(): LiveData<List<WorkItem>>
 }
