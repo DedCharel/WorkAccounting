@@ -8,5 +8,4 @@ data class WorkerDbModel(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val name: String
-
 )

@@ -5,17 +5,18 @@ import androidx.lifecycle.map
 import ru.nvgsoft.workaccounting.data.database.dao.WorkItemsDao
 import ru.nvgsoft.workaccounting.domain.WorkItem
 import ru.nvgsoft.workaccounting.domain.WorkRepository
+import ru.nvgsoft.workaccounting.domain.WorkView
 
 class WorkRepositoryImpl(
     private val workItemsDao: WorkItemsDao,
     private val mapper: WorkItemMapper
 ): WorkRepository {
     override suspend fun addWorkItem(workItem: WorkItem) {
-        workItemsDao.addWorkItem(mapper.mapEntityToDbModel(workItem))
+        workItemsDao.addWorkItem(mapper.mapWorkEntityToDbModel(workItem))
     }
 
     override suspend fun editWorkItem(workItem: WorkItem) {
-        workItemsDao.addWorkItem(mapper.mapEntityToDbModel(workItem))
+        workItemsDao.addWorkItem(mapper.mapWorkEntityToDbModel(workItem))
     }
 
     override suspend fun deleteWorkItem(workItem: WorkItem) {
@@ -23,10 +24,10 @@ class WorkRepositoryImpl(
     }
 
     override suspend fun getWorkItem(workId: Int): WorkItem {
-        return mapper.mupDbModelToEntity(workItemsDao.getWorkItem(workId))
+        return mapper.mapWorkDbModelToEntity(workItemsDao.getWorkItem(workId))
     }
 
-    override fun getWorkList(): LiveData<List<WorkItem>>  = workItemsDao.getWorkList()
+    override fun getWorkList(): LiveData<List<WorkView>>  = workItemsDao.getWorkList()
         .map { mapper.mapListDbModelToListEntity(it) }
 }
 

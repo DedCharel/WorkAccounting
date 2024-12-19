@@ -1,11 +1,17 @@
 package ru.nvgsoft.workaccounting.data.database
 
+import ru.nvgsoft.workaccounting.data.database.model.CounterpartyDbModel
 import ru.nvgsoft.workaccounting.data.database.model.WorkItemDbModel
+import ru.nvgsoft.workaccounting.data.database.model.WorkViewDbModel
+import ru.nvgsoft.workaccounting.data.database.model.WorkerDbModel
+import ru.nvgsoft.workaccounting.domain.Counterparty
 import ru.nvgsoft.workaccounting.domain.WorkItem
+import ru.nvgsoft.workaccounting.domain.WorkView
+import ru.nvgsoft.workaccounting.domain.Worker
 
 class WorkItemMapper {
 
-    fun mapEntityToDbModel(workItem: WorkItem) = WorkItemDbModel(
+    fun mapWorkEntityToDbModel(workItem: WorkItem) = WorkItemDbModel(
         id = workItem.id,
         counterpartyId = workItem.counterpartyId,
         workDescription = workItem.workDescription,
@@ -13,7 +19,7 @@ class WorkItemMapper {
         spendTime = workItem.spendTime
     )
 
-    fun mupDbModelToEntity(workItemDbModel: WorkItemDbModel) = WorkItem(
+    fun mapWorkDbModelToEntity(workItemDbModel: WorkItemDbModel) = WorkItem(
         id = workItemDbModel.id,
         counterpartyId = workItemDbModel.counterpartyId,
         workDescription = workItemDbModel.workDescription,
@@ -21,5 +27,21 @@ class WorkItemMapper {
         spendTime = workItemDbModel.spendTime
     )
 
-    fun mapListDbModelToListEntity(list: List<WorkItemDbModel>) = list.map { mupDbModelToEntity(it) }
+    fun mapCounterpartyDbModelToEntity(counterpartyDbModel: CounterpartyDbModel) = Counterparty(
+        id = counterpartyDbModel.id,
+        name = counterpartyDbModel.name,
+        inn = counterpartyDbModel.inn
+    )
+
+    fun mapWorkerDbModelToEntity(workerDbModel: WorkerDbModel) = Worker(
+        id = workerDbModel.id,
+        name = workerDbModel.name
+    )
+
+
+    fun mapListDbModelToListEntity(list: List<WorkViewDbModel>) = list.map {
+        WorkView(
+            mapWorkDbModelToEntity(it.workItem),
+            mapCounterpartyDbModelToEntity(it.counterparty),
+            mapWorkerDbModelToEntity(it.worker)) }
 }

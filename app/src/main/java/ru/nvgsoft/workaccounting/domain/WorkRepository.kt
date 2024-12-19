@@ -12,5 +12,5 @@ interface WorkRepository {
 
     suspend fun getWorkItem(workId: Int): WorkItem
 
-    fun getWorkList(): LiveData<List<WorkItem>>
+    fun getWorkList(): LiveData<List<WorkView>>
 }
