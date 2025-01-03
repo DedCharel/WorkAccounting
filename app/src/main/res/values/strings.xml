@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Work accounting</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_works">Works</string>
+    <string name="title_directories">Directories</string>
+    <string name="title_settings">Settings</string>
 </resources>
