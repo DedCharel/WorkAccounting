@@ -13,6 +13,7 @@ class WorkItemMapper {
 
     fun mapWorkEntityToDbModel(workItem: WorkItem) = WorkItemDbModel(
         id = workItem.id,
+        date = workItem.date,
         counterpartyId = workItem.counterpartyId,
         workDescription = workItem.workDescription,
         workerId = workItem.workerId,
@@ -21,6 +22,7 @@ class WorkItemMapper {
 
     fun mapWorkDbModelToEntity(workItemDbModel: WorkItemDbModel) = WorkItem(
         id = workItemDbModel.id,
+        date = workItemDbModel.date,
         counterpartyId = workItemDbModel.counterpartyId,
         workDescription = workItemDbModel.workDescription,
         workerId = workItemDbModel.workerId,
