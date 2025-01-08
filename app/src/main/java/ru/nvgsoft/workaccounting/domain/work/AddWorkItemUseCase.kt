@@ -1,4 +1,4 @@
-package ru.nvgsoft.workaccounting.domain
+package ru.nvgsoft.workaccounting.domain.work
 
 class AddWorkItemUseCase(
     private val repository: WorkRepository

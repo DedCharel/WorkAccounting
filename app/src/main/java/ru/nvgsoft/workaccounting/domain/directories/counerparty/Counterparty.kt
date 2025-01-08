@@ -1,4 +1,4 @@
-package ru.nvgsoft.workaccounting.domain
+package ru.nvgsoft.workaccounting.domain.directories.counerparty
 
 data class Counterparty(
     val id: Int,

@@ -3,9 +3,9 @@ package ru.nvgsoft.workaccounting.data.database
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
 import ru.nvgsoft.workaccounting.data.database.dao.WorkItemsDao
-import ru.nvgsoft.workaccounting.domain.WorkItem
-import ru.nvgsoft.workaccounting.domain.WorkRepository
-import ru.nvgsoft.workaccounting.domain.WorkView
+import ru.nvgsoft.workaccounting.domain.work.WorkItem
+import ru.nvgsoft.workaccounting.domain.work.WorkRepository
+import ru.nvgsoft.workaccounting.domain.work.WorkView
 
 class WorkRepositoryImpl(
     private val workItemsDao: WorkItemsDao,

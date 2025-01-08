@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ru.nvgsoft.workaccounting.R
-import ru.nvgsoft.workaccounting.domain.WorkView
+import ru.nvgsoft.workaccounting.domain.work.WorkView
 
 class WorkListAdapter() : ListAdapter<WorkView, WorkListAdapter.WorkViewHolder>(WorkViewDiffCallback()){
 

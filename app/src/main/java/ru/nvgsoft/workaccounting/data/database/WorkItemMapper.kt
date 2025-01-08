@@ -4,10 +4,10 @@ import ru.nvgsoft.workaccounting.data.database.model.CounterpartyDbModel
 import ru.nvgsoft.workaccounting.data.database.model.WorkItemDbModel
 import ru.nvgsoft.workaccounting.data.database.model.WorkViewDbModel
 import ru.nvgsoft.workaccounting.data.database.model.WorkerDbModel
-import ru.nvgsoft.workaccounting.domain.Counterparty
-import ru.nvgsoft.workaccounting.domain.WorkItem
-import ru.nvgsoft.workaccounting.domain.WorkView
-import ru.nvgsoft.workaccounting.domain.Worker
+import ru.nvgsoft.workaccounting.domain.directories.counerparty.Counterparty
+import ru.nvgsoft.workaccounting.domain.work.WorkItem
+import ru.nvgsoft.workaccounting.domain.work.WorkView
+import ru.nvgsoft.workaccounting.domain.directories.workers.Worker
 
 class WorkItemMapper {
 
