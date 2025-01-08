@@ -23,6 +23,7 @@ import androidx.room.PrimaryKey
 data class WorkItemDbModel(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
+    @ColumnInfo(name = "date") val date: String,
     @ColumnInfo(name = "counterparty_id") val counterpartyId: Int,
     @ColumnInfo(name = "work_description") val workDescription: String,
     @ColumnInfo(name = "worker_id") val workerId: Int,
