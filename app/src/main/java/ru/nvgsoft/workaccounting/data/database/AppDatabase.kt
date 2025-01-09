@@ -4,9 +4,6 @@ import android.app.Application
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import ru.nvgsoft.workaccounting.data.database.dao.CounterpartyDao
-import ru.nvgsoft.workaccounting.data.database.dao.WorkItemsDao
-import ru.nvgsoft.workaccounting.data.database.dao.WorkerDao
 import ru.nvgsoft.workaccounting.data.database.model.CounterpartyDbModel
 import ru.nvgsoft.workaccounting.data.database.model.WorkItemDbModel
 import ru.nvgsoft.workaccounting.data.database.model.WorkerDbModel
@@ -21,14 +18,13 @@ import ru.nvgsoft.workaccounting.data.database.model.WorkerDbModel
 )
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun workItemsDao(): WorkItemsDao
-    abstract fun workerDao(): WorkerDao
-    abstract fun CounterpartyDao(): CounterpartyDao
+    abstract fun workItemsDao(): WorkDao
+
 
     companion object {
         private var INSTANCE: AppDatabase? = null
         private val LOCK = Any()
-        private const val DB_NAME = "work_item.dp"
+        private const val DB_NAME = "work_list.db"
 
         fun getInstance(application: Application): AppDatabase {
             INSTANCE?.let {

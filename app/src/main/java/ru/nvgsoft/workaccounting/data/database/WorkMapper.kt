@@ -9,7 +9,7 @@ import ru.nvgsoft.workaccounting.domain.work.WorkItem
 import ru.nvgsoft.workaccounting.domain.work.WorkView
 import ru.nvgsoft.workaccounting.domain.directories.workers.Worker
 
-class WorkItemMapper {
+class WorkMapper {
 
     fun mapWorkEntityToDbModel(workItem: WorkItem) = WorkItemDbModel(
         id = workItem.id,
