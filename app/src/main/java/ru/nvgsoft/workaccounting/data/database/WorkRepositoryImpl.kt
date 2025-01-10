@@ -1,5 +1,6 @@
 package ru.nvgsoft.workaccounting.data.database
 
+import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
 import ru.nvgsoft.workaccounting.domain.directories.workers.Worker
@@ -9,9 +10,11 @@ import ru.nvgsoft.workaccounting.domain.directories.counerparty.Counterparty
 import ru.nvgsoft.workaccounting.domain.work.WorkView
 
 class WorkRepositoryImpl(
-    private val workDao: WorkDao,
-    private val mapper: WorkMapper
+   application: Application
 ): WorkRepository {
+    private val workDao: WorkDao = AppDatabase.getInstance(application).workItemsDao()
+    private val mapper: WorkMapper = WorkMapper()
+
     override suspend fun addWorkItem(workItem: WorkItem) {
         workDao.addWorkItem(mapper.mapWorkEntityToDbModel(workItem))
     }
